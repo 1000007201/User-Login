@@ -30,3 +30,10 @@ class LoginSerializers(serializers.ModelSerializer):
         fields = ['username', 'password']
         required_fields = fields
 
+
+class ResetPassSerializer(serializers.Serializer):
+    username = serializers.CharField()
+    old_password = serializers.CharField(style={'input_type': 'password'})
+    new_password = serializers.CharField(style={'input_type': 'password'})
+    conf_new_password = serializers.CharField(style={'input_type': 'password'})
+
